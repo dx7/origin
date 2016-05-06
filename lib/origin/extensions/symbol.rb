@@ -46,7 +46,7 @@ module Origin
         #
         # @since 1.0.0
         def add_key(name, strategy, operator, additional = nil, &block)
-          define_method(name) do
+          redefine_method(name) do
             method = "__#{strategy}__".to_sym
             Key.new(self, method, operator, additional, &block)
           end

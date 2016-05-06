@@ -23,7 +23,7 @@ module Origin
     #
     # @since 2.0.0
     def aggregating?
-      !!@aggregating
+      !!(@aggregating ||= nil)
     end
 
     # Add a group ($group) operation to the aggregation pipeline.
